@@ -7,7 +7,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Georgia', serif; margin: 0; padding: 0; background-color: #fdfdfd; text-align: center; color: #2c3e50; }
+        body { font-family: 'Georgia', serif; margin: 0; padding: 0; background-color: #fdfdfd; text-align: center; color: #2c3e50; scroll-behavior: smooth; }
+        
+        /* Navigation Bar (The Onglets) */
+        nav { background: #fff; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        nav a { text-decoration: none; color: #1a252f; margin: 0 15px; font-weight: bold; text-transform: uppercase; font-size: 0.9em; letter-spacing: 1px; transition: 0.3s; }
+        nav a:hover { color: #25D366; }
+
         header { background-color: #1a252f; color: white; padding: 60px 20px; }
         .container { width: 90%; max-width: 1000px; margin: 20px auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         
@@ -17,24 +23,32 @@
         .about-text { font-size: 1.15em; line-height: 1.8; color: #444; margin-bottom: 30px; text-align: justify; }
         .owner-plus { background-color: #f0f7f4; border-left: 5px solid #25D366; padding: 20px; margin: 20px 0; font-weight: bold; color: #1e8449; border-radius: 0 10px 10px 0; text-align: left; }
 
-        /* Amenities Grid */
         .amenities { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 25px; margin: 40px 0; padding: 30px; background: #fafafa; border-radius: 10px; border: 1px solid #f0f0f0; }
         .amenity-item { font-size: 0.95em; color: #444; font-weight: bold; }
         .amenity-item i { color: #d4af37; font-size: 1.6em; display: block; margin-bottom: 12px; }
 
         .booking-box { background: #f8f9fa; padding: 30px; border-radius: 12px; margin: 30px 0; border: 1px solid #eee; }
         .calendar-input { padding: 12px; border: 1px solid #ccc; border-radius: 8px; width: 280px; font-size: 16px; margin-bottom: 15px; text-align: center; cursor: pointer; }
-        .btn-whatsapp { background-color: #25D366; color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; display: inline-block; transition: 0.4s; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2); }
-        .btn-whatsapp:hover { background-color: #128C7E; transform: translateY(-3px); }
+        .btn-whatsapp { background-color: #25D366; color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; display: inline-block; transition: 0.4s; }
 
         .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
-        .gallery img { width: 100%; height: 300px; object-fit: cover; border-radius: 12px; transition: 0.3s; border: 1px solid #eee; }
+        .gallery img { width: 100%; height: 300px; object-fit: cover; border-radius: 12px; }
 
         footer { padding: 40px; background: #1a252f; color: white; margin-top: 60px; }
-        h3 { color: #1a252f; text-transform: uppercase; letter-spacing: 1px; font-size: 1.4em; }
+        
+        @media (max-width: 600px) {
+            nav a { margin: 0 8px; font-size: 0.75em; }
+        }
     </style>
 </head>
 <body>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#amenities">Amenities</a>
+    <a href="#booking">Booking</a>
+    <a href="#gallery">Gallery</a>
+</nav>
 
 <header>
     <h1>La Villa la vie là</h1>
@@ -42,66 +56,61 @@
 </header>
 
 <div class="container">
-    <h2>Welcome to Your Private Escape</h2>
-    
-    <p class="about-text">
-        Experience a bespoke tropical getaway in the heart of Mauritius. Our villa is designed to provide the perfect balance of modern luxury and island serenity, ensuring that every moment of your stay is as relaxing as it is memorable.
-    </p>
-
-    <div class="owner-plus">
-        ✨ <strong>THE VILLA PLUS:</strong> To ensure your absolute comfort and security, the owners reside on-site. This allows us to provide immediate assistance, local insights, and a personalized level of service that makes our villa feel like your home away from home.
+    <div id="about">
+        <h2>Welcome to Your Private Escape</h2>
+        <p class="about-text">
+            Experience a bespoke tropical getaway in the heart of Mauritius. Our villa is designed to provide the perfect balance of modern luxury and island serenity.
+        </p>
+        <div class="owner-plus">
+            ✨ <strong>THE VILLA PLUS:</strong> The owners reside on-site to ensure your absolute comfort and security.
+        </div>
     </div>
 
-    <h3>Exclusive Amenities & Location</h3>
-    <div class="amenities">
-        <div class="amenity-item"><i class="fas fa-swimming-pool"></i> Private Pool</div>
-        <div class="amenity-item"><i class="fas fa-wifi"></i> Free High-Speed Wi-Fi</div>
-        <div class="amenity-item"><i class="fas fa-parking"></i> Free Secure Parking</div>
-        <div class="amenity-item"><i class="fas fa-umbrella-beach"></i> Access to Pergola</div>
-        <div class="amenity-item"><i class="fas fa-car"></i> 5 Mins to the Beach</div>
-        <div class="amenity-item"><i class="fas fa-golf-ball"></i> 5 Mins to Golf Course</div>
-        <div class="amenity-item"><i class="fas fa-utensils"></i> Restaurants Nearby</div>
-        <div class="amenity-item"><i class="fas fa-snowflake"></i> Fully Air-Conditioned</div>
+    <div id="amenities">
+        <h3>Exclusive Amenities & Location</h3>
+        <div class="amenities">
+            <div class="amenity-item"><i class="fas fa-swimming-pool"></i> Private Pool</div>
+            <div class="amenity-item"><i class="fas fa-wifi"></i> Free High-Speed Wi-Fi</div>
+            <div class="amenity-item"><i class="fas fa-umbrella-beach"></i> Access to Pergola</div>
+            <div class="amenity-item"><i class="fas fa-car"></i> 5 Mins to the Beach</div>
+            <div class="amenity-item"><i class="fas fa-golf-ball"></i> 5 Mins to Golf Course</div>
+            <div class="amenity-item"><i class="fas fa-utensils"></i> Restaurants Nearby</div>
+        </div>
     </div>
 
-    <div class="booking-box">
+    <div id="booking" class="booking-box">
         <h3>Check Availability</h3>
         <input type="text" id="datePicker" class="calendar-input" placeholder="📅 Select your travel dates">
         <br>
-        <a href="#" onclick="sendToWhatsApp()" class="btn-whatsapp">Reserve Your Stay via WhatsApp</a>
+        <a href="#" onclick="sendToWhatsApp()" class="btn-whatsapp">Reserve via WhatsApp</a>
     </div>
 
-    <h2>Gallery</h2>
-    <div class="gallery">
-        <img src="villa1.jpg" alt="Villa Exterior">
-        <img src="villa2.jpg" alt="Villa Interior">
-        <img src="villa3.jpg" alt="Villa Bedroom">
-        <img src="villa4.jpg" alt="Villa Pool">
-        <img src="villa5.jpg" alt="Villa Kitchen">
-        <img src="villa6.jpg" alt="Villa View">
-        <img src="villa7.jpg" alt="Villa Living Area">
-        <img src="villa8.jpg" alt="Villa Details">
-        <img src="villa9.jpg" alt="Villa Sunset">
-        <img src="villa10.jpg" alt="Villa Garden">
+    <div id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="villa1.jpg" alt="Villa 1">
+            <img src="villa2.jpg" alt="Villa 2">
+            <img src="villa3.jpg" alt="Villa 3">
+            <img src="villa4.jpg" alt="Villa 4">
+            <img src="villa5.jpg" alt="Villa 5">
+            <img src="villa6.jpg" alt="Villa 6">
+        </div>
     </div>
 </div>
 
 <footer>
-    <p>📍 Mauritius | La Villa la vie là Ltd</p>
-    <p>&copy; 2026 All Rights Reserved.</p>
+    <p>&copy; 2026 La Villa la vie là Ltd</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
     flatpickr("#datePicker", { mode: "range", minDate: "today", dateFormat: "d-m-Y" });
-
     function sendToWhatsApp() {
-        const selectedDates = document.getElementById("datePicker").value;
-        const myPhoneNumber = "23051234567"; // <--- DON'T FORGET TO CHANGE TO YOUR NUMBER
+        const dates = document.getElementById("datePicker").value;
+        const phone = "23051234567"; 
         let text = "Hello! I am interested in booking La Villa la vie là.";
-        if (selectedDates) { text += " My requested dates for a stay are: " + selectedDates; }
-        const whatsappUrl = "https://wa.me/" + myPhoneNumber + "?text=" + encodeURIComponent(text);
-        window.open(whatsappUrl, '_blank');
+        if (dates) { text += " Dates: " + dates; }
+        window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(text), '_blank');
     }
 </script>
 
