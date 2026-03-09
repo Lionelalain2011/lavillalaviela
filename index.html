@@ -15,26 +15,22 @@
     h2 { border-bottom: 2px solid #0B2C5D; padding-bottom: 10px; color: #0B2C5D; }
     .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
     .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    form { background: white; padding: 30px; border-radius: 10px; max-width: 500px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-    label { font-weight: bold; display: block; margin-top: 10px; }
-    input { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
-    button { background: #0B2C5D; color: white; padding: 15px; border: none; width: 100%; cursor: pointer; border-radius: 5px; font-weight: bold; }
     footer { text-align: center; padding: 30px; background: #0B2C5D; color: white; margin-top: 20px; }
 </style>
 </head>
 <body>
 
 <header>
-    <img src="villa 3.jpeg.jpg" alt="La Villa la vie là">
+    <img src="villa3.jpeg.jpg" alt="La Villa la vie là">
     <div class="overlay">
         <h1>La Villa la vie là Ltd</h1>
-        <p>Comfortable accommodation in Mauritius</p>
+        <p>Luxury Accommodation in Mauritius</p>
     </div>
 </header>
 
 <section>
     <h2>About the Villa</h2>
-    <p>La Villa la vie là is a peaceful and comfortable villa located in the heart of Mauritius. Perfect for relaxation with modern amenities and beautiful views. All rooms include free WiFi and comfortable bedding.</p>
+    <p>La Villa la vie là is a peaceful sanctuary in the heart of Mauritius. Enjoy modern amenities, a private pool, and beautiful tropical views.</p>
 </section>
 
 <section>
@@ -42,34 +38,23 @@
     <div class="gallery" id="gallery"></div>
 </section>
 
-<section>
-    <h2>Make a Reservation</h2>
-    <form action="https://formspree.io/f/xpqyqqbn" method="POST">
-        <label>Name</label>
-        <input type="text" name="name" required>
-        <label>Email</label>
-        <input type="email" name="email" required>
-        <button type="submit">Reserve Now</button>
-    </form>
-</section>
-
 <footer>
     <p>© 2026 La Villa la vie là Ltd</p>
 </footer>
 
 <script>
-    // EXACT names from your folder
+    // These names now match your GitHub file list EXACTLY (no spaces)
     const images = [
-        "villa 1.jpeg.jpg",
-        "villa 2.jpeg.jpg",
-        "villa 3.jpeg.jpg",
-        "villa 4.jpeg.jpg",
-        "villa 5.jpeg.jpg",
-        "villa 6.jpeg.jpg",
-        "villa 7.jpeg.jpg",
-        "villa 8.jpeg.jpeg", // Note the different ending for this one
-        "villa 9.jpeg.jpg",
-        "villa 10.jpeg.jpg"
+        "villa1.jpeg.jpg",
+        "villa2.jpeg.jpg",
+        "villa3.jpeg.jpg",
+        "villa4.jpeg.jpg",
+        "villa5.jpeg.jpg",
+        "villa6.jpeg.jpg",
+        "villa7.jpeg.jpg",
+        "villa8.jpeg.jpeg", 
+        "villa9.jpeg.jpg",
+        "villa10.jpeg.jpg"
     ];
 
     const gallery = document.getElementById("gallery");
@@ -77,8 +62,8 @@
     images.forEach(imgFile => {
         const img = document.createElement("img");
         img.src = imgFile;
-        img.alt = "Villa Image";
-        img.onerror = function() { console.error("Missing file: " + imgFile); };
+        img.alt = "Villa Photo";
+        img.onerror = function() { console.error("Failed to load: " + imgFile); };
         gallery.appendChild(img);
     });
 </script>
