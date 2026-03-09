@@ -1,30 +1,28 @@
-<script>
-    // These names match your GitHub files EXACTLY (no spaces, double extensions)
-    const images = [
-        "villa1.jpeg.jpg",
-        "villa2.jpeg.jpg",
-        "villa3.jpeg.jpg",
-        "villa4.jpeg.jpg",
-        "villa5.jpeg.jpg",
-        "villa6.jpeg.jpg",
-        "villa7.jpeg.jpg",
-        "villa8.jpeg.jpeg", 
-        "villa9.jpeg.jpg",
-        "villa10.jpeg.jpg"
-    ];
-
-    const gallery = document.getElementById("gallery");
-
-    images.forEach(imgFile => {
-        const img = document.createElement("img");
-        img.src = imgFile;
-        img.alt = "Villa Photo";
-        img.style.width = "100%";
-        img.style.height = "200px";
-        img.style.objectFit = "cover";
-        img.style.borderRadius = "8px";
-        // This helps us see if it's still failing
-        img.onerror = function() { console.log("Missing: " + imgFile); };
-        gallery.appendChild(img);
-    });
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>La Villa la vie là Ltd</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; }
+        .gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .gallery img { width: 300px; height: 200px; object-fit: cover; border: 2px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>La Villa la vie là Ltd</h1>
+    <p>Welcome to our luxury villa in Mauritius.</p>
+    
+    <div class="gallery">
+        <img src="villa1.jpeg.jpg">
+        <img src="villa2.jpeg.jpg">
+        <img src="villa3.jpeg.jpg">
+        <img src="villa4.jpeg.jpg">
+        <img src="villa5.jpeg.jpg">
+        <img src="villa6.jpeg.jpg">
+        <img src="villa7.jpeg.jpg">
+        <img src="villa8.jpeg.jpeg">
+        <img src="villa9.jpeg.jpg">
+        <img src="villa10.jpeg.jpg">
+    </div>
+</body>
+</html>
